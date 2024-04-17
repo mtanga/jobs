@@ -1,1 +1,76 @@
 /* You can add global styles to this file, and also import other style files */
+@import '~ngx-toastr/toastr';
+.blue-b {
+    background-color: #004aad;
+    border-color: #004aad!important;
+}
+
+.blue-c {
+    color: #004aad;
+}
+
+.yellow-c {
+    color: #f2cf50;
+}
+
+.yellow-b {
+    background-color: #f2cf50!important;
+}
+
+.bg-auth{
+    background-color: rgb(240, 227, 227) !important;
+}
+
+.page-header {
+    --tw-bg-opacity: 1 !important;
+    background-color: #014aad!important;
+  }
+
+  [data-theme-color="blue"] .bottom-border-tab ul li .active {
+    --tw-border-opacity: 1;
+    border-color: #0d52ae!important;
+    --tw-text-opacity: 1;
+    color: #034bad!important;
+  }
+
+  .selectb{
+    background: #004aad!important;
+  }
+html, body { height: 100%; }
+body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+
+
+.titre{
+  font-size:25px;
+}
+
+.bouton {
+  padding: 10px;
+  color: white;
+  border-radius: 20px;
+  margin-bottom: 100px;
+  width: 50%;
+  margin-right: auto;
+  margin-left: auto;
+  display: block;
+}
+
+a{
+  text-decoration: none!important;
+}
+
+.accpet{
+  background-color: #004aad;
+  border-color: #004aad !important;
+  padding: 10px;
+  border-radius: 30px;
+  color: white;
+}
+
+.deny{
+  background-color: #dd1231;
+  border-color: #dd1231 !important;
+  padding: 10px;
+  border-radius: 30px;
+  color: white!important;
+}

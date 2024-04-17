@@ -1,0 +1,5 @@
+.text-gray-900 {
+    --tw-text-opacity: 1 !important;
+    color: rgb(63 65 77 / var(--tw-text-opacity)) !important;
+    font-size: 14px;
+  }

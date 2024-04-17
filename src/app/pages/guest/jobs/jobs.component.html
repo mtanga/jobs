@@ -1,0 +1,332 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-mode="light" class="scroll-smooths group" data-theme-color="blue">
+    <head>
+
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+
+        <link rel="stylesheet" href="/assets/libs/choices.js/public//assets/styles/choices.min.css">
+
+        <!-- Nouislider Css -->
+        <link rel="stylesheet" href="/assets/libs/nouislider/nouislider.min.css">
+
+        <link rel="stylesheet" href="/assets/css/icons.css" />
+        <link rel="stylesheet" href="/assets/css/tailwind.css" />
+
+
+
+
+    </head>
+    
+    <body class="bg-white dark:bg-neutral-800">
+
+        <div class="main-content">
+            <div class="page-content">
+
+                <section class="pt-28 lg:pt-44 pb-28 page-header bg-[url('../images/home/page-title.png')] bg-center bg-cover relative" >
+                    <div class="container mx-auto">
+                        <div class="grid">
+                            <div class="col-span-12">
+                                <div class="text-center text-white">
+                                    <h3 class="mb-4 text-[26px]">Emplois disponibles</h3>
+                                    <div class="page-next">
+                                        <nav class="inline-block" aria-label="breadcrumb text-center">
+                                            <ol class="flex flex-wrap justify-center text-sm font-medium uppercase">
+                                                <li><a href="index">Accueil</a></li>
+                                                <li class="active" aria-current="page"><i class="bx bxs-chevron-right align-middle px-2.5"></i> Emplois</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/assets/images/about/shape.png" alt="" class="absolute block bg-cover -bottom-0 dark:hidden">
+                    <img src="/assets/images/about/shape-dark.png" alt="" class="absolute hidden bg-cover -bottom-0 dark:block">
+                </section>
+                
+                <!-- Start team -->
+                    <section class="py-16">
+                        <div class="container mx-auto">
+                            <div class="grid grid-cols-12 xl:gap-10 gap-y-12">
+                                <div class="col-span-12 xl:col-span-9">
+                                    <div class="job-list-header">
+                                         <form action="#">
+                                            <div class="grid grid-cols-12 gap-3">
+                                                <div class="col-span-12 xl:col-span-12">
+                                                    <div class="relative filler-job-form">
+                                                        <i class="uil uil-briefcase-alt"></i>
+                                                        <input type="search" [(ngModel)]="term" name="term" (ngModelChange)="search()" class="w-full filter-job-input-box dark:text-gray-100" id="exampleFormControlInput1" placeholder="Rechercher par emploi ou entreprise... ">
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <!--end grid-->
+                                        </form>
+                                    </div>
+           <!--                          <div class="mt-8">
+                                        <h6 class="mb-4 text-gray-900 dark:text-gray-50">Popular</h6>
+                                        <ul class="flex flex-wrap gap-3">
+                                            <li class="border p-[6px] border-gray-100/50 rounded group/joblist dark:border-gray-100/20">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 text-center group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 leading-[2.4] rounded group-data-[theme-color=blue]:text-blue-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 text-sm font-medium">
+                                                        20
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-gray-900 ltr:ml-2 rtl:mr-2 dark:text-gray-50">
+                                                        <h6 class="mb-0 transition-all duration-300 fs-14 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500 group-data-[theme-color=sky]:group-hover/joblist:text-sky-500 group-data-[theme-color=red]:group-hover/joblist:text-red-500 group-data-[theme-color=green]:group-hover/joblist:text-green-500 group-data-[theme-color=pink]:group-hover/joblist:text-pink-500 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500">UI/UX designer</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="border p-[6px] border-gray-100/50 rounded group/joblist dark:border-gray-100/20">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 text-center group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 leading-[2.4] rounded group-data-[theme-color=blue]:text-blue-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 text-sm font-medium">
+                                                        18
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-gray-900 ltr:ml-2 rtl:mr-2 dark:text-gray-50">
+                                                        <h6 class="mb-0 transition-all duration-300 fs-14 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500 group-data-[theme-color=sky]:group-hover/joblist:text-sky-500 group-data-[theme-color=red]:group-hover/joblist:text-red-500 group-data-[theme-color=green]:group-hover/joblist:text-green-500 group-data-[theme-color=pink]:group-hover/joblist:text-pink-500 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500">HR manager</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="border p-[6px] border-gray-100/50 rounded group/joblist dark:border-gray-100/20">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 text-center group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 leading-[2.4] rounded group-data-[theme-color=blue]:text-blue-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 text-sm font-medium">
+                                                        10
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-gray-900 ltr:ml-2 rtl:mr-2 dark:text-gray-50">
+                                                        <h6 class="mb-0 transition-all duration-300 fs-14 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500 group-data-[theme-color=sky]:group-hover/joblist:text-sky-500 group-data-[theme-color=red]:group-hover/joblist:text-red-500 group-data-[theme-color=green]:group-hover/joblist:text-green-500 group-data-[theme-color=pink]:group-hover/joblist:text-pink-500 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500">Product manager</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="border p-[6px] border-gray-100/50 rounded group/joblist dark:border-gray-100/20">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 text-center group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 leading-[2.4] rounded group-data-[theme-color=blue]:text-blue-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 text-sm font-medium">
+                                                        15
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-gray-900 ltr:ml-2 rtl:mr-2 dark:text-gray-50">
+                                                        <h6 class="mb-0 transition-all duration-300 fs-14 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500 group-data-[theme-color=sky]:group-hover/joblist:text-sky-500 group-data-[theme-color=red]:group-hover/joblist:text-red-500 group-data-[theme-color=green]:group-hover/joblist:text-green-500 group-data-[theme-color=pink]:group-hover/joblist:text-pink-500 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500">Sales manager</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                            <li class="border p-[6px] border-gray-100/50 rounded group/joblist dark:border-gray-100/20">
+                                                <div class="flex items-center">
+                                                    <div class="h-8 w-8 text-center group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 leading-[2.4] rounded group-data-[theme-color=blue]:text-blue-500 group-data-[theme-color=sky]:text-sky-500 group-data-[theme-color=red]:text-red-500 group-data-[theme-color=green]:text-green-500 group-data-[theme-color=pink]:text-pink-500 group-data-[theme-color=blue]:text-blue-500 text-sm font-medium">
+                                                        28
+                                                    </div>
+                                                    <a href="javascript:void(0)" class="text-gray-900 ltr:ml-2 rtl:mr-2 dark:text-gray-50">
+                                                        <h6 class="mb-0 transition-all duration-300 fs-14 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500 group-data-[theme-color=sky]:group-hover/joblist:text-sky-500 group-data-[theme-color=red]:group-hover/joblist:text-red-500 group-data-[theme-color=green]:group-hover/joblist:text-green-500 group-data-[theme-color=pink]:group-hover/joblist:text-pink-500 group-data-[theme-color=blue]:group-hover/joblist:text-blue-500">Developer</h6>
+                                                    </a>
+                                                </div>
+                                            </li>
+                                        </ul>
+                                    </div> -->
+
+                                    <div class="space-y-8 mt-14">
+                                        <div *ngFor="let item of jobs | paginate: { itemsPerPage: 10, currentPage: p }" class="relative overflow-hidden transition-all duration-500 ease-in-out bg-white border rounded-md border-gray-100/50 group/jobs group-data-[theme-color=blue]:hover:border-blue-500 group-data-[theme-color=sky]:hover:border-sky-500 group-data-[theme-color=red]:hover:border-red-500 group-data-[theme-color=green]:hover:border-green-500 group-data-[theme-color=pink]:hover:border-pink-500 group-data-[theme-color=blue]:hover:border-blue-500 hover:-translate-y-2 dark:bg-neutral-900 dark:border-neutral-600">
+                                            <div class="p-6">
+                                                <div class="grid grid-cols-12 gap-5">
+                                                    <div class="col-span-12 lg:col-span-1">
+                                                        <div class="px-2 mb-4 text-center mb-md-0">
+                                                            <a ><img [src]="domaineUrl+item.enterprise.logo" alt="" class="mx-auto img-fluid rounded-3"></a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                    <div class="col-span-10">
+                                                        <h5 class="mb-1 fs-17"><a  (click)="getJob(item.id)" style="cursor:pointer;" class="dark:text-gray-50">{{item.title}}</a> 
+                                                            <small class="font-normal text-gray-500 dark:text-gray-300">({{item.days.length}}/7 jours)</small>
+                                                        </h5>
+                                                        <ul class="flex flex-wrap mb-0 lg:gap-3 gap-y-3">
+                                                            <li>
+                                                                <p class="mb-0 text-sm text-gray-500 dark:text-gray-300">{{item.enterprise.name}}</p>
+                                                            </li>
+                                                            <li>
+                                                                <p class="mb-0 text-sm text-gray-500 dark:text-gray-300"><i class="mdi mdi-map-marker"></i> {{item.address}}</p>
+                                                            </li>
+                                                            <li>
+                                                                <p class="mb-0 text-sm text-gray-500 dark:text-gray-300"><i class="uil uil-wallet"></i> ${{item.salary}}</p>
+                                                            </li>
+                                                        </ul>
+                                                        <div class="mt-4">
+                                                            <div class="flex flex-wrap gap-1.5">
+                                                                <span class="bg-green-500/20 text-green-500 text-11 px-2 py-0.5 font-medium rounded">Delai de candidature :  {{item.end}}</span>
+                                       <!--                          <span class="bg-yellow-500/20 text-yellow-500 text-11 px-2 py-0.5 font-medium rounded">Urgent</span>
+                                                                <span class="bg-sky-500/20 text-sky-500 text-11 px-2 py-0.5 font-medium rounded">Private</span> -->
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <!--end row-->
+                                            </div>
+
+
+
+                                            <div class="px-4 py-3 bg-gray-50 dark:bg-neutral-700">
+                                                <div class="grid grid-cols-12">
+                                                <div class="col-span-12 lg:col-span-6">
+                                                        <ul class="flex flex-wrap gap-2 text-gray-700 dark:text-gray-50">
+                                      <!--                       <li><i class="uil uil-tag"></i> Keywords :</li>
+                                                            <li><a href="javascript:void(0)" class="primary-link text-muted">Ui designer</a>,</li>
+                                                            <li><a href="javascript:void(0)" class="primary-link text-muted">developer</a></li> -->
+                                                        </ul>
+                                                    </div> 
+                                                    <!--end col-->
+                                                    <div class="col-span-12 mt-2 lg:col-span-6 lg:mt-0">
+                                                        <div class="ltr:lg:text-right rtl:lg:text-left dark:text-gray-50">
+                                                            <a (click)="getJob(item.id)" style="cursor:pointer;" data-bs-toggle="modal">Postuler maintenant <i class="mdi mdi-chevron-double-right"></i></a>
+                                                        </div>
+                                                    </div>
+                                                    <!--end col-->
+                                                </div>
+                                                <!--end row-->
+                                            </div>
+                             <!--                <div class="absolute top-4 ltr:right-4 rtl:left-4">
+                                                <div class="w-8 h-8 text-center text-white bg-red-600 rounded">
+                                                    <a href="javascript:void(0)"><i class="uil uil-heart-alt text-lg leading-[1.9]"></i></a>
+                                                </div>
+                                            </div> -->
+                                        </div>
+
+                                    </div>
+
+                                    <div class="grid grid-cols-12">
+                                        <div class="col-span-12">
+                                            <div class="flex justify-center gap-2 mt-8">
+                                                <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-span-12 space-y-5 lg:col-span-3">
+           
+                                    <div data-tw-accordion="collapse">
+                                        <div class="text-gray-700 accordion-item dark:text-gray-300">
+                                            <h6>
+                                                <button type="button" class="flex items-center justify-between w-full px-4 py-2 font-medium text-left accordion-header group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 group active">
+                                                    <span class="text-gray-900 text-15 dark:text-gray-50"> Salaire</span>
+                                                    <i class="mdi mdi-chevron-down text-xl group-[.active]:rotate-180 text-gray-900 dark:text-gray-50"></i>
+                                                </button>
+                                            </h6>
+                                            <div class="block accordion-body">
+                                                <div class="p-5">
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-neutral-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300"> Plus 100$</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-neutral-600 dark:checked:bg-blue-500/20" checked type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">plus de 200$</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-neutral-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Plus de 500$</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-neutral-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Plus de 100$</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-tw-accordion="collapse">
+                                        <div class="text-gray-700 accordion-item dark:text-gray-300">
+                                            <h6>
+                                                <button type="button" class="flex items-center justify-between w-full px-4 py-2 font-medium text-left accordion-header group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 group active">
+                                                    <span class="text-gray-900 text-15 dark:text-gray-50">Date de publication</span>
+                                                    <i class="mdi mdi-chevron-down text-xl group-[.active]:rotate-180 text-gray-900 dark:text-gray-50"></i>
+                                                </button>
+                                            </h6>
+                                            <div class="block accordion-body">
+                                                <div class="p-5">
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Tout</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" checked type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Dernieres heures</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Dernieres 24 heures</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">derniers 7 jours</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Dernieers 14 jours</label>
+                                                    </div>
+                                                    <div class="mt-2">
+                                                        <input class="rounded cursor-pointer group-data-[theme-color=blue]:checked:bg-blue-500 group-data-[theme-color=sky]:checked:bg-sky-500 group-data-[theme-color=red]:checked:bg-red-500 group-data-[theme-color=green]:checked:bg-green-500 group-data-[theme-color=pink]:checked:bg-pink-500 group-data-[theme-color=blue]:checked:bg-blue-500 focus:ring-0 focus:ring-offset-0 dark:bg-zinc-600 dark:checked:bg-blue-500/20" type="checkbox" value="" id="flexCheckChecked1">
+                                                        <label class="text-gray-500 cursor-pointer ltr:ml-2 rtl:mr-2 dark:text-gray-300">Derniers 30 jours</label>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div data-tw-accordion="collapse">
+                                        <div class="text-gray-700 accordion-item dark:text-gray-300">
+                                            <h6>
+                                                <button type="button" class="flex items-center justify-between w-full px-4 py-2 font-medium text-left accordion-header group-data-[theme-color=blue]:bg-blue-500/20 group-data-[theme-color=sky]:bg-sky-500/20 group-data-[theme-color=red]:bg-red-500/20 group group-data-[theme-color=green]:bg-green-500/20 group-data-[theme-color=pink]:bg-pink-500/20 group-data-[theme-color=blue]:bg-blue-500/20 group active">
+                                                    <span class="text-gray-900 text-15 dark:text-gray-50">Competences</span>
+                                                    <i class="mdi mdi-chevron-down text-xl group-[.active]:rotate-180 text-gray-900 dark:text-gray-50"></i>
+                                                </button>
+                                            </h6>
+                                            <div class="block accordion-body">
+                                                <div class="flex flex-wrap gap-2 p-5">
+                                                    <a href="javascript:void(0)" class="bg-gray-50 text-13 rounded px-2 py-0.5 font-medium text-gray-500 group-data-[theme-color=blue]:hover:bg-blue-500 group-data-[theme-color=sky]:hover:bg-sky-500 group-data-[theme-color=red]:hover:bg-red-500 group-data-[theme-color=green]:hover:bg-green-500 group-data-[theme-color=pink]:hover:bg-pink-500 group-data-[theme-color=blue]:hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out dark:text-gray-50 dark:bg-neutral-600/40">design</a>
+                                                    <a href="javascript:void(0)" class="bg-gray-50 text-13 rounded px-2 py-0.5 font-medium text-gray-500 group-data-[theme-color=blue]:hover:bg-blue-500 group-data-[theme-color=sky]:hover:bg-sky-500 group-data-[theme-color=red]:hover:bg-red-500 group-data-[theme-color=green]:hover:bg-green-500 group-data-[theme-color=pink]:hover:bg-pink-500 group-data-[theme-color=blue]:hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out dark:text-gray-50 dark:bg-neutral-600/40">marketing</a>
+                                                    <a href="javascript:void(0)" class="bg-gray-50 text-13 rounded px-2 py-0.5 font-medium text-gray-500 group-data-[theme-color=blue]:hover:bg-blue-500 group-data-[theme-color=sky]:hover:bg-sky-500 group-data-[theme-color=red]:hover:bg-red-500 group-data-[theme-color=green]:hover:bg-green-500 group-data-[theme-color=pink]:hover:bg-pink-500 group-data-[theme-color=blue]:hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out dark:text-gray-50 dark:bg-neutral-600/40">business</a>
+                                                    <a href="javascript:void(0)" class="bg-gray-50 text-13 rounded px-2 py-0.5 font-medium text-gray-500 group-data-[theme-color=blue]:hover:bg-blue-500 group-data-[theme-color=sky]:hover:bg-sky-500 group-data-[theme-color=red]:hover:bg-red-500 group-data-[theme-color=green]:hover:bg-green-500 group-data-[theme-color=pink]:hover:bg-pink-500 group-data-[theme-color=blue]:hover:bg-blue-500 hover:text-white transition-all duration-300 ease-in-out dark:text-gray-50 dark:bg-neutral-600/40">developer</a>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                <!-- End team -->
+           
+            </div>
+        </div>
+        
+        <app-footer></app-footer>
+
+        <ngx-loading
+        [show]="loading"
+        [config]="{
+        animationType: ngxLoadingAnimationTypes.circle,
+          primaryColour: primaryColour,
+          secondaryColour: secondaryColour,
+          tertiaryColour: primaryColour,
+          backdropBorderRadius: '3px'
+        }"
+        ></ngx-loading>
+     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+     <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+
+
+    <script src="/assets/js/pages/switcher.js"></script>
+  
+     <script src="/assets/libs/choices.js/public//assets/scripts/choices.min.js"></script>
+
+     <script src="/assets/js/pages/job-list.init.js"></script>
+
+    <script src="/assets/js/pages/dropdown&modal.init.js"></script>
+
+    <!-- Nouislider Js -->
+        <script src="/assets/libs/nouislider/nouislider.min.js"></script>
+
+        <script src="/assets/js/pages/area-filter-range.init.js"></script>
+
+    <script src="/assets/js/pages/nav&tabs.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+    
+</body>
+</html>

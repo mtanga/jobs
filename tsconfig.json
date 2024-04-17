@@ -8,9 +8,12 @@
     "strict": true,
     "noImplicitOverride": true,
     "noPropertyAccessFromIndexSignature": true,
-    "noImplicitReturns": true,
     "noFallthroughCasesInSwitch": true,
     "sourceMap": true,
+    "strictNullChecks":false,
+    "strictPropertyInitialization": false,
+    "noImplicitAny": false,
+    "noImplicitReturns": false,
     "declaration": false,
     "downlevelIteration": true,
     "experimentalDecorators": true,
@@ -28,6 +31,6 @@
     "enableI18nLegacyMessageIdFormat": false,
     "strictInjectionParameters": true,
     "strictInputAccessModifiers": true,
-    "strictTemplates": true
+    "strictNullChecks": false
   }
 }

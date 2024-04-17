@@ -1,0 +1,272 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-mode="light" class="scroll-smooths group" data-theme-color="blue">
+    <head>
+
+
+
+
+    </head>
+    
+    <body class="bg-white dark:bg-neutral-800">
+
+
+
+
+        <div class="main-content">
+            <div class="page-content">
+
+                <section class="pt-28 lg:pt-44 pb-28 page-header bg-center bg-cover relative" >
+                    <div class="container mx-auto">
+                        <div class="grid">
+                            <div class="col-span-12">
+                                <div class="text-center text-white">
+                                    <h3 class="mb-4 text-[26px]">Ajouter un nouvel emploi</h3>
+                                    <div class="page-next">
+                                        <nav class="inline-block" aria-label="breadcrumb text-center">
+                                            <ol class="flex justify-center text-sm font-medium uppercase">
+                                                <li><a href="index">Accueil</a></li>
+                                                <li class="active" aria-current="page"><i class="bx bxs-chevron-right align-middle px-2.5"></i>Nouvel emploi</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/assets/images/about/shape.png" alt="" class="absolute block bg-cover -bottom-0 dark:hidden">
+                    <img src="/assets/images/about/shape-dark.png" alt="" class="absolute hidden bg-cover -bottom-0 dark:block">
+                </section>
+
+                <!-- Start grid -->
+                    <section class="pt-16">
+                        <div class="container mx-auto">
+                            <div class="grid items-center grid-cols-12 mt-5 lg:gap-8 gap-y-8">
+                                
+                                
+                                <div class="col-span-12 lg:col-span-12">
+                                    <div class="mt-4 form-add">
+                                        <p class="text-center text-gray-500 dark:text-gray-300">Veuillez remplir le formulaire suivant pour enregistrer vottre offre</p>
+                                        <form method="post" onsubmit="return validateForm()" class="mt-4 contact-form" name="myForm" id="myForm">
+                                            <span id="error-msg"></span>
+                                            <div class="grid grid-cols-12 gap-5">
+                                                <div class="col-span-12">
+                                                    <div class="mb-3">
+                                                        <label for="nameInput" class="text-gray-900 dark:text-gray-50">Titre de l'emploi</label>
+                                                        <input type="text" [(ngModel)]="job.title" name="title" id="name" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" placeholder="">
+                                                    </div>
+                                                </div><!--end col-->
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="emailInput" class="text-gray-900 dark:text-gray-50">Nombre de postes</label>
+                                                        <input type="number" [(ngModel)]="job.places" name="places" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="emaiol"    >
+                                                    </div>
+                                                </div><!--end col-->
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Adresse de localisation</label>
+                                                        <input type="text" [(ngModel)]="job.address" name="address" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput"    >
+                                                    </div>
+                                                </div><!--end col-->
+
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="emailInput" class="text-gray-900 dark:text-gray-50">Date de debut</label>
+                                                        <input type="date" [(ngModel)]="job.start" name="start" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="emaiol"    >
+                                                    </div>
+                                                </div><!--end col-->
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Date de fin</label>
+                                                        <input type="date" [(ngModel)]="job.end" name="end" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput"    >
+                                                    </div>
+                                                </div><!--end col-->
+
+
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="emailInput" class="text-gray-900 dark:text-gray-50">Taches</label>
+                                                        <input type="text" [(ngModel)]="task" name="task" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="emaiol"    >
+                                                    </div>
+                                                </div><!--end col-->
+
+                                                
+
+
+
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <button style="margin-top:25px;" (click)="addAsk()" type="submit" id="submit" name="submit" class="text-white border-transparent btn group-data-[theme-color=blue]:bg-blue-500 group-data-[theme-color=sky]:bg-sky-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 group-data-[theme-color=pink]:bg-pink-500 group-data-[theme-color=blue]:bg-blue-500"> Ajouter <i class="uil uil-message ms-1"></i></button>
+                                                        
+                                                    </div>
+                                                </div><!--end col-->
+
+                                                <div class="col-span-12 lg:col-span-12" style="margin-top: -35px;">
+                                                    <h6 class="text-lg font-bold text-gray-900 dark:text-gray-50"></h6>
+                                                    <div class="flex flex-wrap gap-3 mt-3">
+                                                        <span 
+                                                        *ngFor="let info of job.tasks; let i = index" (click)="deleteTask(i)"
+                                                        class="mt-2 text-13 px-2 py-0.5 bg-blue-500/20 text-blue-500 rounded font-medium" style="cursor: pointer;">
+                                                        {{info}}   (Cliquer pour supprimer)</span>
+                                                    </div>
+                                                </div>
+
+
+
+
+                                                <div class="col-span-12">
+                                                    <div class="mb-3">
+                                                        <label for="meassageInput" class="text-gray-900 dark:text-gray-50">Description de l'emploi</label>
+                                                        <ckeditor
+                                                        [editor]="Editor"
+                                                        [data]="job.description"
+                                                        (ready)="onReady($event)"
+                                                        (change)="onChange($event)"
+                                                      >
+                                                      </ckeditor>  
+
+                                                     
+                                                    </div>
+                                                </div><!--end col-->
+
+
+
+                                                
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="emailInput" class="text-gray-900 dark:text-gray-50">Domaine</label>
+                                                        <input type="text" [(ngModel)]="term" name="term" (ngModelChange)="search()" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="emaiol"    >
+                                                    </div>
+
+
+                                                    <div class="flex flex-wrap gap-3 mt-3" *ngIf="term.length>0">
+                                                        <span (click)="addDomain()" style="cursor:pointer;" class="mt-2 text-13 px-2 py-0.5 bg-red-500/20 text-red-500 rounded font-medium">
+                                                            {{term | titlecase}} (Cliquez pour ajouter)</span>
+                                                    </div>
+
+                                                    <div class="flex flex-wrap gap-3 mt-3">
+                                                        <span 
+                                                        style="cursor:pointer;" class="mt-2 text-13 px-2 py-0.5 bg-blue-500/20 text-blue-500 rounded font-medium" 
+                                                        *ngFor="let infos of listed;"
+                                                        (click)="AddDomainSelected(infos.name)"
+                                                        >
+                                                        {{infos.name | titlecase}} (Cliquez pour ajouter)
+                                                    </span>
+                                                    </div>
+                                                </div><!--end col-->
+
+
+
+
+                                                <div class="col-span-12 lg:col-span-6">
+                                                    <div class="mb-3">
+                                                        <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Salaire</label>
+                                                        <input type="number" [(ngModel)]="job.price" name="price" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput" >
+                                                    </div>
+                                                </div><!--end col-->
+                                            
+
+
+                                                <div class="col-span-12 lg:col-span-3">
+                                                    <div class="mb-3">
+                                                        <label for="emailInput" class="text-gray-900 dark:text-gray-50">Disponibilités en jour</label>
+                                                        <select  [(ngModel)]="available.day" name="day" class="w-full mt-1 group-data-[theme-color=blue]:bg-blue-400/40 group-data-[theme-color=sky]:bg-sky-400/40 group-data-[theme-color=red]:bg-red-400/40 group-data-[theme-color=green]:bg-green-400/40 group-data-[theme-color=pink]:bg-pink-400/40 group-data-[theme-color=blue]:bg-blue-400/40 py-2.5 rounded border-transparent placeholder:text-sm placeholder:text-gray-50 text-white">
+                                                            <option *ngFor="let item of options.days; let i = index" [value]="item.id">{{item.name}}</option>
+                                                        </select>
+                                                    </div>
+                                                </div>
+                                                
+                                                <!--end col-->
+                                                <div class="col-span-12 lg:col-span-3">
+                                                    <div class="mb-3">
+                                                        <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Horaire de debut</label>
+                                                        <input [(ngModel)]="available.start" name="start" type="time" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput"    >
+                                                    </div>
+                                                </div><!--end col-->
+                                                <div class="col-span-12 lg:col-span-3">
+                                                    <div class="mb-3">
+                                                        <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Horaire de fin</label>
+                                                        <input [(ngModel)]="available.end" name="end" type="time" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput"    >
+                                                    </div>
+                                                </div><!--end col-->
+
+
+
+
+                                                <div class="col-span-12 lg:col-span-3">
+                                                    <div class="mb-3">
+                                                        <button (click)="addAvailable()" style="margin-top:25px; color: #004aad !important; border: 1px solid #004aad !important;" type="submit" id="submit" name="submit" class="text-white border-transparent btn "> Ajouter <i class="uil uil-message ms-1"></i></button>
+                                                    </div>
+                                                </div><!--end col-->
+                                            </div><!--end row-->
+                                            <div class="mt-1" style="margin-top: -25px !important;margin-bottom: 20px;">
+                                                <div class="flex flex-wrap gap-3 mt-3">
+                                                    <span 
+                                                    *ngFor="let info of job.available;"
+                                                    class="mt-2 text-13 px-2 py-0.5 bg-blue-500/20 text-blue-500 rounded font-medium">
+                                                    {{getDay(info.day).name}} de {{getDay(info.day).start}} à {{getDay(info.day).end}} (Cliquer pour supprimer)</span>
+                                                </div>
+                                            </div>
+
+
+
+
+                                            <!--end col-->
+                                            <div class="col-span-12 lg:col-span-3">
+                                                <div class="mb-3">
+                                                    <label for="subjectInput" class="text-gray-900 dark:text-gray-50">Image de l'emploi</label>
+                                                    <input name="start" type="file" id="photo" (change)="fileChangeEvent($event)" class="w-full mt-1 rounded border-gray-100/50 placeholder:text-sm placeholder:text-gray-400 dark:bg-transparent dark:border-gray-800 focus:ring-0 focus:ring-offset-0 dark:text-gray-200" id="subjectInput"    >
+                                                    <img [src]="cardImageBase64" class="icard"/>
+                                                </div>
+                                            </div><!--end col-->
+                                                
+
+
+                                            <div class="text-right" style="margin-top:50px;">
+                                                <button type="button" id="submit" (click)="addJob()" class="bouton blue-b"> Enregistrer et poster <i class="uil uil-message ms-1"></i></button>
+                                            </div>
+                                        </form><!--end form-->
+                                    </div>
+                                </div><!--end col-->
+                                
+                   
+                                <!--end col-->
+                            </div>
+                        </div>
+   
+                    </section>
+                <!-- End grid -->
+               
+            </div>
+        </div>
+        
+        
+<app-footer></app-footer>
+
+
+<ngx-loading
+[show]="loading"
+[config]="{
+animationType: ngxLoadingAnimationTypes.circle,
+  primaryColour: primaryColour,
+  secondaryColour: secondaryColour,
+  tertiaryColour: primaryColour,
+  backdropBorderRadius: '3px'
+}"
+></ngx-loading>
+
+
+     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+     <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+
+    <script src="/assets/js/pages/switcher.js"></script>
+
+    <script src="/assets/js/pages/dropdown&modal.init.js"></script>
+
+    <script src="/assets/js/pages/nav&tabs.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+    
+</body>
+</html>

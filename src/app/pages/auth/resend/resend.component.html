@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-mode="light" class="scroll-smooths group" data-theme-color="blue">
+    <head>
+        <meta charset="utf-8" />
+        <title>index-1 | Jobcy - Admin & Dashboard Template</title>
+        <meta
+          name="viewport"
+          content="width=device-width, initial-scale=1, shrink-to-fit=no"
+        />
+        <meta
+          content="Tailwind Multipurpose Admin & Dashboard Template"
+          name="description"
+        />
+        <meta content="" name="Themesbrand" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+
+        <!-- App favicon -->
+        <link rel="shortcut icon" href="/assets/images/favicon.ico" />
+
+
+
+        <link rel="stylesheet" href="/assets/css/icons.css" />
+        <link rel="stylesheet" href="/assets/css/tailwind.css" />
+
+
+
+
+    </head>
+    
+    <body class="bg-white dark:bg-neutral-800">
+
+     
+            <div class="main-content">
+                <div class="page-content">
+    
+                    <section class="flex items-center justify-center min-h-screen py-10 bg-auth">
+                        <div class="container mx-auto">
+                            <div class="grid grid-cols-12">
+                                <div class="col-span-12 lg:col-span-10 lg:col-start-2">
+                                    <div class="flex flex-col bg-white rounded-lg dark:bg-neutral-800">
+                                        <div class="grid flex-col grid-cols-12">
+                                            <div class="col-span-6 ltr:rounded-l-lg rtl:rounded-r-lg">
+                                                <div class="p-10">
+                                                    <a href="index.html">
+                                                        <img src="/assets/images/logo-app.png" alt="" class="logo-login block mx-auto dark:hidden">
+                                                    </a>
+                                                </div>
+                                            </div>
+                                            <div class="col-span-12 rounded-b-md lg:col-span-6 group-data-[theme-color=blue]:bg-blue-700 group-data-[theme-color=sky]:bg-sky-700 group-data-[theme-color=red]:bg-red-700 group-data-[theme-color=green]:bg-green-700 group-data-[theme-color=pink]:bg-pink-700 group-data-[theme-color=blue]:bg-blue-700 lg:rounded-b-none lg:ltr:rounded-r-lg rtl:rounded-l-lg">
+                                                <div class="flex flex-col items-center justify-center h-full p-12">
+                                                    <div class="mb-6 text-center">
+                                                        <h5 class="mb-2 text-lg text-white">Activation de votre compte</h5>
+                                                        <p class="text-white/80">Veuillez consulter votre adresse électronique <b>{{email}}</b> pour l'activer.</p> 
+                                                    </div>
+                                                    <span 
+                                                    (click)="send()"
+                                                    style="cursor: pointer;"
+                                                        class="btn w-full bg-white text-gray-900 font-medium border-transparent hover:-translate-y-1.5 duration-500 ease"
+                                                        >
+                                                       Renvoyer un nouveau mail d'activation
+                                                    </span>
+                                                    <div class="mt-5 text-center">
+                                                        <p class="text-white">Compte déjà activé ? <a href="login" class="text-white underline fw-medium"> Connectez-vous maintenant! </a></p>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+    
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    
+                </div>
+            </div>
+ 
+
+
+            <ngx-loading
+            [show]="loading"
+            [config]="{
+            animationType: ngxLoadingAnimationTypes.circle,
+              primaryColour: primaryColour,
+              secondaryColour: secondaryColour,
+              tertiaryColour: primaryColour,
+              backdropBorderRadius: '3px'
+            }"
+          ></ngx-loading>
+       
+
+     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+     <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+
+    <script src="/assets/js/pages/switcher.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+    
+</body>
+</html>

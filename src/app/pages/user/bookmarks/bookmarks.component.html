@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-mode="light" class="scroll-smooths group" data-theme-color="blue">
+    <head>
+
+
+
+
+
+    </head>
+    
+    <body class="bg-white dark:bg-neutral-800">
+
+
+
+        <div class="main-content">
+            <div class="page-content">
+
+                <section class="pt-28 lg:pt-44 pb-28 page-header bg-[url('../images/home/page-title.png')] bg-center bg-cover relative" >
+                    <div class="container mx-auto">
+                        <div class="grid">
+                            <div class="col-span-12">
+                                <div class="text-center text-white" style="padding-top:50px;margin-bottom:-55px;">
+                                    <h3 class="mb-4 text-[26px]">Gerer mes favoris</h3>
+                                    <div class="page-next">
+                                        <nav class="inline-block" aria-label="breadcrumb text-center">
+                                            <ol class="flex flex-wrap justify-center text-sm font-medium uppercase">
+                                                <li><a href="index">Accueil</a></li>
+                                                <li class="active" aria-current="page"><i class="bx bxs-chevron-right align-middle px-2.5"></i>Mes favoris</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/assets/images/about/shape.png" alt="" class="absolute block bg-cover -bottom-0 dark:hidden">
+                    <img src="/assets/images/about/shape-dark.png" alt="" class="absolute hidden bg-cover -bottom-0 dark:block">
+                </section>
+
+                <!-- Start grid -->
+                    <section class="py-20">
+                        <div class="container mx-auto">
+                    
+                            <div class="mt-8">
+                                <div class="grid grid-cols-1 gap-y-5">
+                                    <div *ngFor="let item of jobs | paginate: { itemsPerPage: 10, currentPage: p }" class="p-5 border border-gray-100/50 rounded-md relative hover:-translate-y-1.5 transition-all duration-500 ease-in-out group-data-[theme-color=blue]:hover:border-blue-500 group-data-[theme-color=sky]:hover:border-sky-500 group-data-[theme-color=red]:hover:border-red-500 group-data-[theme-color=green]:hover:border-green-500 group-data-[theme-color=pink]:hover:border-pink-500 group-data-[theme-color=blue]:hover:border-blue-500 hover:shadow-md hover:shadow-gray-100/30 dark:border-neutral-600 dark:hover:shadow-neutral-900">
+                                        <div class="grid grid-cols-12">
+                                            <div class="col-span-12 lg:col-span-1">
+                                                <span ><img [src]="domaineUrl+item.enterprise.logo" alt="" class="img-fluid rounded-3" style="padding-right:10px;"></span>
+                                            </div><!--end col-->
+                                            <div class="col-span-12 lg:col-span-9">
+                                                <div class="mt-4 lg:mt-0">
+                                                    <h5 class="mb-1 text-17"><span  class="text-gray-900 dark:text-gray-50">{{item.job.title}}</span></h5>
+                                                    <ul class="flex gap-3 mb-0">
+                                                        <li class="">
+                                                            <p class="mb-0 text-sm text-gray-500 dark:text-gray-300">{{item.enterprise.name}}</p>
+                                                        </li>
+                                                        <li class="">
+                                                            <p class="mb-0 text-sm text-gray-500 dark:text-gray-300"><i class="mdi mdi-map-marker"></i> {{item.job.address}}</p>
+                                                        </li>
+                                                        <li class="">
+                                                            <p class="mb-0 text-sm text-gray-500 dark:text-gray-300"><i class="uil uil-wallet"></i> Delai de candidature :  {{item.job.end}}</p>
+                                                        </li>
+                                                    </ul>
+                                         <!--            <div class="flex flex-wrap gap-2 mt-3">
+                                                        <span class="px-2 py-0.5 mt-1 font-medium text-red-500 rounded bg-red-500/20 text-13">{{item.days.length}}/7 jours</span>
+                                                        <span class="px-2 py-0.5 mt-1 font-medium text-yellow-500 rounded bg-yellow-500/20 text-13">08 heures / semaine</span>
+                                                    </div> -->
+                                                </div>
+                                            </div><!--end col-->
+                                            <div class="items-center col-span-12 lg:col-span-2 ">
+                                                <ul class="flex flex-wrap gap-3 mt-4 lg:mt-0">
+                                  
+                                                    <li class="w-10 h-10 text-lg leading-10 text-center text-red-500 rounded-full bg-red-500/20" data-bs-toggle="tooltip" data-bs-placement="top" aria-label="Delete" data-bs-original-title="Delete">
+                                                        <a (click)="deleteJob(item.id)" style="cursor:pointer" data-bs-toggle="modal" data-bs-target="#deleteModal" class="text-center avatar-sm danger-bg-subtle d-inline-block rounded-circle fs-18">
+                                                            <i class="uil uil-trash-alt"></i>
+                                                        </a>
+                                                    </li>
+                                                </ul>
+                                            </div><!--end col-->
+                                        </div><!--end row-->
+                                    </div>
+
+                                </div>
+                            </div>
+                            <div class="grid grid-cols-12">
+                                
+                                <div class="col-span-12">
+                                    <div class="flex justify-center gap-2 mt-8">
+                                        <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                    </div>
+                                </div>
+                                <!--end col-->
+                            </div>
+                        </div>
+                    </section>
+                <!-- End grid -->
+
+            </div>
+        </div>
+        
+        
+<app-footer></app-footer>
+
+<ngx-loading
+[show]="loading"
+[config]="{
+animationType: ngxLoadingAnimationTypes.circle,
+  primaryColour: primaryColour,
+  secondaryColour: secondaryColour,
+  tertiaryColour: primaryColour,
+  backdropBorderRadius: '3px'
+}"
+></ngx-loading>
+
+
+     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+     <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+
+     <script src="/assets/js/pages/switcher.js"></script>
+     
+       <!-- Choice Js -->
+        <script src="/assets/libs/choices.js/public//assets/scripts/choices.min.js"></script>
+
+     <script src="/assets/js/pages/candidate.init.js"></script>
+
+    <script src="/assets/js/pages/dropdown&modal.init.js"></script>
+
+    <script src="/assets/js/pages/nav&tabs.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+    
+</body>
+</html>

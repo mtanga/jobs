@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr" data-mode="light" class="scroll-smooths group" data-theme-color="blue">
+    <head>
+
+
+
+
+
+    </head>
+    
+    <body class="bg-white dark:bg-neutral-800">
+
+
+
+
+        <div class="main-content">
+            <div class="page-content">
+
+                <section class="pt-28 lg:pt-44 pb-28 page-header bg-[url('../images/home/page-title.png')] bg-center bg-cover relative" >
+                    <div class="container mx-auto">
+                        <div class="grid">
+                            <div class="col-span-12">
+                                <div class="text-center text-white" style="padding-top:50px; margin-bottom:-50px;">
+                                    <h3 class="mb-4 text-[26px]">Mes employés</h3>
+                                    <div class="page-next">
+                                        <nav class="inline-block" aria-label="breadcrumb text-center">
+                                            <ol class="flex flex-wrap justify-center text-sm font-medium uppercase">
+                                                <li><a href="index">Accueil</a></li>
+                                                <li class="active" aria-current="page"><i class="bx bxs-chevron-right align-middle px-2.5"></i>Employés</li>
+                                            </ol>
+                                        </nav>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <img src="/assets/images/about/shape.png" alt="" class="absolute block bg-cover -bottom-0 dark:hidden">
+                    <img src="/assets/images/about/shape-dark.png" alt="" class="absolute hidden bg-cover -bottom-0 dark:block">
+                </section>
+
+                <!-- Start grid -->
+                    <section class="py-20">
+                        <div class="container mx-auto">
+
+                            <div class="job-list-header" style="margin-bottom: 25px;">
+                                <form action="#">
+                                   <div class="grid grid-cols-12 gap-3">
+                                       <div class="col-span-12 xl:col-span-12">
+                                           <div class="relative filler-job-form">
+                                               <i class="uil uil-briefcase-alt"></i>
+                                               <input type="search" [(ngModel)]="term" name="term" (ngModelChange)="search()" class="w-full filter-job-input-box dark:text-gray-100" id="exampleFormControlInput1" placeholder="Rechercher un employé... ">
+                                           </div>
+                                       </div>
+                                   </div>
+                                   <!--end grid-->
+                               </form>
+                           </div>
+
+
+                            <div class="grid items-center grid-cols-12 mb-4">
+                                <div class="col-span-12 lg:col-span-8">
+                                    <div class="mb-3 mb-lg-0">
+                                        <h6 class="text-gray-900 text-16 dark:text-gray-50"> Affichage de 1 à {{perpage}} dans un total de {{companies.length}} </h6>
+                                    </div>
+                                </div><!--end col-->
+
+                                <div class="col-span-12 lg:col-span-4">
+                                    <div class="candidate-list-widgets">
+                                        <div class="grid items-center grid-cols-12 gap-3">
+                                            <div class="col-span-12 lg:col-span-6">
+                                                <div class="selection-widget">
+                  <!--                                   <select class="form-select" data-trigger name="choices-single-filter-orderby" id="choices-single-filter-orderby" aria-label="Default select example">
+                                                        <option value="df">Default</option>
+                                                        <option value="ne">Newest</option>
+                                                        <option value="od">Oldest</option>
+                                                        <option value="rd">Random</option>
+                                                    </select> -->
+                                                </div>
+                                            </div>
+                                            <div class="col-span-12 lg:col-span-6">
+                                                <div class="selection-widget">
+                                                    <select class="form-select" (change)="changetaile($event)" data-trigger name="choices-candidate-page" id="choices-candidate-page" aria-label="Default select example">
+                                                        <option [value]="companies.length">Tout</option>
+                                                        <option *ngFor="let nombre of sectionsPages" [value]="nombre.number">{{nombre.name}}</option>
+                                                    </select>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div><!--end candidate-list-widgets-->
+                                </div><!--end col-->
+                            </div>
+                            <div class="mt-8">
+                                <div class="grid grid-cols-12 gap-8">
+                                    <div class="col-span-12 lg:col-span-4" *ngFor="let item of companies  | paginate: { itemsPerPage: perpage, currentPage: p }"  style="cursor:pointer;">
+                                        <div class="relative px-6 py-1 border rounded-md border-gray-100/50 dark:border-neutral-600" style="width: 70%;">
+                                            <img [src]="domaineUrl+item.student.photo" alt="" class="mx-auto logo">
+                                            <div class="text-center">
+                                                <a ><h6 class="mb-3 text-lg text-gray-900 dark:text-white">{{item.student.first_name}} {{item.student.last_name}}</h6></a>
+                                                <p class="mb-6 text-gray-500 dark:text-gray-300" style="margin-top: -20px;">{{item.job.title}}k</p>
+    
+                                                <a  class="text-white border-transparent btn group-data-[theme-color=blue]:bg-blue-500 group-data-[theme-color=sky]:bg-sky-500 group-data-[theme-color=red]:bg-red-500 group-data-[theme-color=green]:bg-green-500 group-data-[theme-color=pink]:bg-pink-500 group-data-[theme-color=blue]:bg-blue-500 focus:ring focus:ring-custom-500/30">{{item.tasks.length}} taches</a>
+                                            </div>
+                                            <div class="absolute px-2 text-white bg-blue-500 top-3 ltr:right-0 rtl:left-0">
+                                                <span class="relative text-xs font-medium uppercase">4.9 <i class="mdi mdi-star-outline"></i></span>
+                                                <div class="after:contant[] ltr:after:border-r-[11px] rtl:after:border-l-[11px] after:absolute after:border-b-[11px] ltr:after:-left-[11px] rtl:after:-right-[11px] after:top-0 after:border-t-[11px] after:border-t-transparent after:border-blue-500 after:border-b-transparent"></div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="grid grid-cols-12">
+                                    <div class="col-span-12">
+                                        <div class="flex justify-center gap-2 mt-8">
+                                            <pagination-controls (pageChange)="p = $event"></pagination-controls>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+            
+                        </div>
+                    </section>
+                <!-- End grid -->
+
+            </div>
+        </div>
+        
+        <app-footer></app-footer>
+
+        
+        <ngx-loading
+        [show]="loading"
+        [config]="{
+        animationType: ngxLoadingAnimationTypes.circle,
+          primaryColour: primaryColour,
+          secondaryColour: secondaryColour,
+          tertiaryColour: primaryColour,
+          backdropBorderRadius: '3px'
+        }"
+      ></ngx-loading>
+
+
+     <script src="https://unicons.iconscout.com/release/v4.0.0/script/monochrome/bundle.js"></script>
+     <script src="/assets/libs/@popperjs/core/umd/popper.min.js"></script>
+     <script src="/assets/libs/simplebar/simplebar.min.js"></script>
+
+
+     <script src="/assets/js/pages/switcher.js"></script>
+     
+       <!-- Choice Js -->
+        <script src="/assets/libs/choices.js/public//assets/scripts/choices.min.js"></script>
+
+     <script src="/assets/js/pages/candidate.init.js"></script>
+
+    <script src="/assets/js/pages/dropdown&modal.init.js"></script>
+
+    <script src="/assets/js/pages/nav&tabs.js"></script>
+
+    <script src="/assets/js/app.js"></script>
+    
+</body>
+</html>

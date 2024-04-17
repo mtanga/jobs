@@ -1,0 +1,21 @@
+.logo {
+    height: 125px !important;
+  }
+
+  .w-8 {
+    width: 3rem !important;
+  }
+  .h-8 {
+    height: 2.5rem !important;
+  }
+
+
+  .avatar-h{
+    width : 15%;
+  }
+
+  .mx-auto {
+    margin-right: auto !important;
+    margin-left: auto !important;
+    width: 100%;
+  }
